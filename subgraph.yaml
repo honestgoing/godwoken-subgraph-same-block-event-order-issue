@@ -1,0 +1,27 @@
+specVersion: 0.0.2
+description: To record event order inside same block
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ERC721NFTMarketV1
+    network: gwmainnet
+    source:
+      address: "0xea54182Ea1CC48745ce381FF3810aCC14532A631"
+      abi: ERC721NFTMarketV1
+      startBlock: 165467
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./mapping.ts
+      entities:
+        - Test
+      abis:
+        - name: ERC721NFTMarketV1
+          file: ./abis/ERC721NFTMarketV1.json
+      eventHandlers:
+        - event: Trade(indexed address,indexed uint256,indexed address,address,uint256,uint256,bool)
+          handler: handleTrade
+        - event: AskNew(indexed address,indexed address,indexed uint256,uint256)
+          handler: handleAskNew

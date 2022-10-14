@@ -1,0 +1,14 @@
+{
+  "name": "godwoken-subgraph-event-order-issue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "codegen": "graph codegen subgraph.yaml",
+    "build": "graph build subgraph.yaml"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.21.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "typescript": "^4.8.4"
+  }
+}

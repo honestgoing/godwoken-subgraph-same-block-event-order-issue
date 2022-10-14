@@ -1,0 +1,6 @@
+type Test @entity {
+  id: ID!
+
+  history: [String!]!
+  latest: String!
+}
