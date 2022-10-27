@@ -1,3 +1,5 @@
+> **The issue have been fixed.**
+
 ## Prerequisites
 
 yarn, node.js, docker, docker-compose
